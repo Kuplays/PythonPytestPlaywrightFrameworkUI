@@ -46,8 +46,8 @@ Fixture to retrieve already logged in page to reuse in other tests. Used to get 
 we open browser, put default login data and return page with this context.
 """
 @pytest.fixture(scope="function")
-def get_logged_page(browser_page, base_url):
-    login_page = LoginPage(browser_page, base_url)
+def get_logged_page(browser_page, basic_url):
+    login_page = LoginPage(browser_page, basic_url)
     login_page.go_to()
     login_page.login(DEFAULT_USER_NAME, DEFAULT_USER_PASSWORD)
 
