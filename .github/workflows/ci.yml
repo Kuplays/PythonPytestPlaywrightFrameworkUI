@@ -27,9 +27,9 @@ jobs:
         run: pytest --browser=${{ matrix.browser }} --alluredir=reports/allure-reports
       - name: Install Allure
         run: |
-          sudo apt-add-repository ppa:qameta/allure -y
-          sudo apt-get update
-          sudo apt-get install allure -y
+          curl -o allure-commandline.tgz -L https://github.com/allure-framework/allure2/releases/latest/download/allure-commandline-2.29.0.tgz
+          sudo tar -zxvf allure-commandline.tgz -C /opt/
+          sudo ln -s /opt/allure-2.29.0/bin/allure /usr/bin/allure
       - name: Generate Allure report
         run: allure generate reports/allure-reports -o reports/allure-report --clean
       - name: Deploy Allure report to GH Pages
