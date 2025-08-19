@@ -26,10 +26,7 @@ jobs:
       - name: Run tests with allure files generation
         run: pytest --browser=${{ matrix.browser }} --alluredir=reports/allure-reports
       - name: Install Allure
-        run: |
-          curl -L -o allure-commandline.tgz https://github.com/allure-framework/allure2/releases/download/2.29/allure-commandline-2.29.tgz
-          sudo tar -zxvf allure-commandline.tgz -C /opt/
-          sudo ln -s /opt/allure-2.29.0/bin/allure /usr/bin/allure
+        run: npm install -g allure-commandline
       - name: Generate Allure report
         run: allure generate reports/allure-reports -o reports/allure-report --clean
       - name: Deploy Allure report to GH Pages
@@ -38,3 +35,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: reports/allure-report
           publish_branch: gh-pages
+          keep_files: false
