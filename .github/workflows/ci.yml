@@ -2,6 +2,8 @@ name: UI Python Playwright
 
 on:
   push:
+    branches:
+      [master]
   pull_request:
 
 jobs:
@@ -21,5 +23,18 @@ jobs:
         run: |
           pip install -r requirements.txt
           playwright install --with-deps
-      - name: Run tests
-        run: pytest --browser=${{ matrix.browser }}
+      - name: Run tests with allure files generation
+        run: pytest --browser=${{ matrix.browser }} --alluredir=reports/allure-reports
+      - name: Install Allure
+        run: |
+          sudo apt-add-repository ppa:qameta/allure -y
+          sudo apt-get update
+          sudo apt-get install allure -y
+      - name: Generate Allure report
+        run: allure generate reports/allure-reports -o reports/allure-report --clean
+      - name: Deploy Allure report to GH Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: reports/allure-report
+          publish_branch: gh-pages
