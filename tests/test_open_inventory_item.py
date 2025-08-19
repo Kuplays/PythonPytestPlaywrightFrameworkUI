@@ -1,4 +1,5 @@
 import pytest
+import allure
 from page_objects.inventory_page import InventoryPage
 
 @pytest.mark.smoke
@@ -24,7 +25,10 @@ def test_open_inventory_item(get_logged_page, basic_url, item_name):
     :return:
     """
 
-    inventory_page = InventoryPage(get_logged_page, basic_url)
-    inventory_page.inventory_title_click(item_name=item_name)
+    with allure.step("[TEST] Get logged in instance of a page"):
+        inventory_page = InventoryPage(get_logged_page, basic_url)
+    with allure.step(f"[TEST] Click on an item`s title {item_name}"):
+        inventory_page.inventory_title_click(item_name=item_name)
     title_actual = inventory_page.get_inner_text(selector=inventory_page.inventory_item_name_list)
-    assert item_name == title_actual
+    with allure.step(f"[TEST] Perform comparison of {item_name} == {title_actual}"):
+        assert item_name == title_actual

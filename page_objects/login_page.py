@@ -1,3 +1,4 @@
+import allure
 from page_objects.basic_page import BasicPage
 
 
@@ -16,6 +17,7 @@ class LoginPage(BasicPage):
     =================================================
     """
 
+    @allure.step("Redirect to the main page at login")
     def go_to(self) -> None:
         """
         Opens up login page. Same as go_to basic_url. Just for clarity
@@ -23,6 +25,7 @@ class LoginPage(BasicPage):
         """
         super().go_to(path="/")
 
+    @allure.step("Perform login operation with username and password")
     def login(self, username: str, password: str) -> None:
         """
         Performs a login operation
