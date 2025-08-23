@@ -1,3 +1,4 @@
+import allure
 import pytest
 from playwright.sync_api import sync_playwright
 from page_objects.login_page import LoginPage
@@ -61,3 +62,15 @@ def user_details(request):
     return {"username": request.config.getoption("--default_user_name"),
             "password": request.config.getoption("--default_user_password")
     }
+
+"""
+Fixture is autouseable to save screenshot at teardown state
+"""
+@pytest.fixture(autouse=True)
+def make_screenshot_after_test(request, browser_page):
+    yield
+    allure.attach(
+        browser_page.screenshot(),
+        name=f"test_{request.node.name}",
+        attachment_type=allure.attachment_type.PNG
+    )
