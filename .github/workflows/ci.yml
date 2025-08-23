@@ -45,7 +45,7 @@ jobs:
       - name: Download chrome results
         uses: actions/download-artifact@v4
         with:
-          name: allure-results-chrome
+          name: allure-results-chromium
           path: allure-results/chromium
 
       - name: Download firefox results
