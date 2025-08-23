@@ -7,7 +7,7 @@
     :param basic_url: basic url
     :param item_name: item to compare
     :return:
-    ","50","test_open_inventory_item[Sauce Labs Bike Light]","tests","Sat Aug 23 03:58:19 UTC 2025","passed","Sat Aug 23 03:58:19 UTC 2025","","test_open_inventory_item","",""
+    ","89","test_open_inventory_item[Sauce Labs Bike Light]","tests","Sat Aug 23 03:58:31 UTC 2025","passed","Sat Aug 23 03:58:31 UTC 2025","","test_open_inventory_item","",""
 "
     Test performs click on a given element with given name and checks if corresponding element was loaded. Uses
     parametrize to perform same operation with every element to ensure correct loading of different elements.
@@ -16,7 +16,7 @@
     :param basic_url: basic url
     :param item_name: item to compare
     :return:
-    ","39","test_open_inventory_item[Sauce Labs Fleece Jacket]","tests","Sat Aug 23 03:58:20 UTC 2025","passed","Sat Aug 23 03:58:20 UTC 2025","","test_open_inventory_item","",""
+    ","94","test_open_inventory_item[Sauce Labs Onesie]","tests","Sat Aug 23 03:58:39 UTC 2025","passed","Sat Aug 23 03:58:39 UTC 2025","","test_open_inventory_item","",""
 "
     Test performs click on a given element with given name and checks if corresponding element was loaded. Uses
     parametrize to perform same operation with every element to ensure correct loading of different elements.
@@ -25,7 +25,8 @@
     :param basic_url: basic url
     :param item_name: item to compare
     :return:
-    ","49","test_open_inventory_item[Sauce Labs Bolt T-Shirt]","tests","Sat Aug 23 03:58:20 UTC 2025","passed","Sat Aug 23 03:58:20 UTC 2025","","test_open_inventory_item","",""
+    ","105","test_open_inventory_item[Sauce Labs Backpack]","tests","Sat Aug 23 03:58:28 UTC 2025","passed","Sat Aug 23 03:58:28 UTC 2025","","test_open_inventory_item","",""
+"","754","test_login_success","tests","Sat Aug 23 03:58:25 UTC 2025","passed","Sat Aug 23 03:58:26 UTC 2025","","test_login","",""
 "
     Test performs click on a given element with given name and checks if corresponding element was loaded. Uses
     parametrize to perform same operation with every element to ensure correct loading of different elements.
@@ -34,7 +35,7 @@
     :param basic_url: basic url
     :param item_name: item to compare
     :return:
-    ","47","test_open_inventory_item[Sauce Labs Backpack]","tests","Sat Aug 23 03:58:18 UTC 2025","passed","Sat Aug 23 03:58:18 UTC 2025","","test_open_inventory_item","",""
+    ","93","test_open_inventory_item[Sauce Labs Fleece Jacket]","tests","Sat Aug 23 03:58:36 UTC 2025","passed","Sat Aug 23 03:58:36 UTC 2025","","test_open_inventory_item","",""
 "
     Test performs click on a given element with given name and checks if corresponding element was loaded. Uses
     parametrize to perform same operation with every element to ensure correct loading of different elements.
@@ -43,8 +44,7 @@
     :param basic_url: basic url
     :param item_name: item to compare
     :return:
-    ","63","test_open_inventory_item[Test.allTheThings() T-Shirt (Red)]","tests","Sat Aug 23 03:58:22 UTC 2025","passed","Sat Aug 23 03:58:22 UTC 2025","","test_open_inventory_item","",""
-"","478","test_login_success","tests","Sat Aug 23 03:58:17 UTC 2025","passed","Sat Aug 23 03:58:17 UTC 2025","","test_login","",""
+    ","96","test_open_inventory_item[Test.allTheThings() T-Shirt (Red)]","tests","Sat Aug 23 03:58:41 UTC 2025","passed","Sat Aug 23 03:58:41 UTC 2025","","test_open_inventory_item","",""
 "
     Test performs click on a given element with given name and checks if corresponding element was loaded. Uses
     parametrize to perform same operation with every element to ensure correct loading of different elements.
@@ -53,4 +53,4 @@
     :param basic_url: basic url
     :param item_name: item to compare
     :return:
-    ","28","test_open_inventory_item[Sauce Labs Onesie]","tests","Sat Aug 23 03:58:21 UTC 2025","passed","Sat Aug 23 03:58:21 UTC 2025","","test_open_inventory_item","",""
+    ","77","test_open_inventory_item[Sauce Labs Bolt T-Shirt]","tests","Sat Aug 23 03:58:34 UTC 2025","passed","Sat Aug 23 03:58:34 UTC 2025","","test_open_inventory_item","",""
