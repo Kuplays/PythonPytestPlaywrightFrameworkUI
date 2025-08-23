@@ -1,4 +1,5 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","668","test_login_success[firefox]","tests","Sat Aug 23 05:16:25 UTC 2025","passed","Sat Aug 23 05:16:25 UTC 2025","","test_login","",""
 "
     Test performs click on a given element with given name and checks if corresponding element was loaded. Uses
     parametrize to perform same operation with every element to ensure correct loading of different elements.
@@ -7,7 +8,7 @@
     :param basic_url: basic url
     :param item_name: item to compare
     :return:
-    ","47","test_open_inventory_item[chromium-Sauce Labs Onesie]","tests","Sat Aug 23 05:16:27 UTC 2025","passed","Sat Aug 23 05:16:27 UTC 2025","","test_open_inventory_item","",""
+    ","94","test_open_inventory_item[firefox-Sauce Labs Fleece Jacket]","tests","Sat Aug 23 05:16:36 UTC 2025","passed","Sat Aug 23 05:16:36 UTC 2025","","test_open_inventory_item","",""
 "
     Test performs click on a given element with given name and checks if corresponding element was loaded. Uses
     parametrize to perform same operation with every element to ensure correct loading of different elements.
@@ -16,7 +17,7 @@
     :param basic_url: basic url
     :param item_name: item to compare
     :return:
-    ","42","test_open_inventory_item[chromium-Sauce Labs Fleece Jacket]","tests","Sat Aug 23 05:16:26 UTC 2025","passed","Sat Aug 23 05:16:27 UTC 2025","","test_open_inventory_item","",""
+    ","93","test_open_inventory_item[firefox-Sauce Labs Bike Light]","tests","Sat Aug 23 05:16:31 UTC 2025","passed","Sat Aug 23 05:16:31 UTC 2025","","test_open_inventory_item","",""
 "
     Test performs click on a given element with given name and checks if corresponding element was loaded. Uses
     parametrize to perform same operation with every element to ensure correct loading of different elements.
@@ -25,7 +26,7 @@
     :param basic_url: basic url
     :param item_name: item to compare
     :return:
-    ","33","test_open_inventory_item[chromium-Sauce Labs Backpack]","tests","Sat Aug 23 05:16:24 UTC 2025","passed","Sat Aug 23 05:16:24 UTC 2025","","test_open_inventory_item","",""
+    ","111","test_open_inventory_item[firefox-Sauce Labs Onesie]","tests","Sat Aug 23 05:16:39 UTC 2025","passed","Sat Aug 23 05:16:39 UTC 2025","","test_open_inventory_item","",""
 "
     Test performs click on a given element with given name and checks if corresponding element was loaded. Uses
     parametrize to perform same operation with every element to ensure correct loading of different elements.
@@ -34,7 +35,7 @@
     :param basic_url: basic url
     :param item_name: item to compare
     :return:
-    ","50","test_open_inventory_item[chromium-Sauce Labs Bolt T-Shirt]","tests","Sat Aug 23 05:16:26 UTC 2025","passed","Sat Aug 23 05:16:26 UTC 2025","","test_open_inventory_item","",""
+    ","94","test_open_inventory_item[firefox-Sauce Labs Bolt T-Shirt]","tests","Sat Aug 23 05:16:34 UTC 2025","passed","Sat Aug 23 05:16:34 UTC 2025","","test_open_inventory_item","",""
 "
     Test performs click on a given element with given name and checks if corresponding element was loaded. Uses
     parametrize to perform same operation with every element to ensure correct loading of different elements.
@@ -43,7 +44,7 @@
     :param basic_url: basic url
     :param item_name: item to compare
     :return:
-    ","64","test_open_inventory_item[chromium-Test.allTheThings() T-Shirt (Red)]","tests","Sat Aug 23 05:16:28 UTC 2025","passed","Sat Aug 23 05:16:28 UTC 2025","","test_open_inventory_item","",""
+    ","95","test_open_inventory_item[firefox-Test.allTheThings() T-Shirt (Red)]","tests","Sat Aug 23 05:16:42 UTC 2025","passed","Sat Aug 23 05:16:42 UTC 2025","","test_open_inventory_item","",""
 "
     Test performs click on a given element with given name and checks if corresponding element was loaded. Uses
     parametrize to perform same operation with every element to ensure correct loading of different elements.
@@ -52,5 +53,4 @@
     :param basic_url: basic url
     :param item_name: item to compare
     :return:
-    ","51","test_open_inventory_item[chromium-Sauce Labs Bike Light]","tests","Sat Aug 23 05:16:25 UTC 2025","passed","Sat Aug 23 05:16:25 UTC 2025","","test_open_inventory_item","",""
-"","598","test_login_success[chromium]","tests","Sat Aug 23 05:16:22 UTC 2025","passed","Sat Aug 23 05:16:23 UTC 2025","","test_login","",""
+    ","111","test_open_inventory_item[firefox-Sauce Labs Backpack]","tests","Sat Aug 23 05:16:28 UTC 2025","passed","Sat Aug 23 05:16:28 UTC 2025","","test_open_inventory_item","",""
