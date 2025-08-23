@@ -15,24 +15,59 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'
+
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
           playwright install --with-deps
+
       - name: Run tests with allure files generation
-        run: pytest --browser=${{ matrix.browser }} --alluredir=reports/allure-reports --clean-alluredir
+        run: pytest --browser=${{ matrix.browser }} --alluredir=allure-results --clean-alluredir
+
+      - name: Upload allure
+        uses: actions/upload-artifact@v3
+        with:
+          name: allure-results-${{ matrix.browser }}
+          path: allure-results
+
+  allure-report:
+    needs: tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout results
+        uses: actions/checkout@v3
+
+      - name: Download chrome results
+        uses: actions/download-artifact@v3
+        with:
+          name: allure-results-chrome
+          path: allure-results/chromium
+
+      - name: Download firefox results
+        uses: actions/download-artifact@v3
+        with:
+          name: allure-results-firefox
+          path: allure-results/firefox
+
+      - name: Merge reports
+        run: |
+          mkdir -p allure-results-merged
+          cp -r allure-results/chromium/* allure-results-merged/ || true
+          cp -r allure-results/firefox/* allure-results-merged/ || true
+
       - name: Install Allure
         run: npm install -g allure-commandline
       - name: Generate Allure report
-        run: allure generate reports/allure-reports -o reports/allure-report --clean
+        run: allure generate allure-results-merged -o allure-report --clean
       - name: Deploy Allure report to GH Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: reports/allure-report
+          publish_dir: allure-report
           publish_branch: gh-pages
           keep_files: false
