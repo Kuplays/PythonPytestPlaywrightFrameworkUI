@@ -1,3 +1,7 @@
+import os
+import sys
+import platform
+
 import allure
 import pytest
 from playwright.sync_api import sync_playwright
@@ -20,19 +24,24 @@ resources via context and browser closing. Note to self: playwright pytest alrea
 for demonstrating purpose only.
 """
 @pytest.fixture(scope="function")
-def browser_page(request):
-    browser_name = request.config.getoption("--browser")
-    if isinstance(browser_name, list):
-        browser_name = browser_name[0]
+def browser_and_page_tuple(request):
+    browser_title = request.config.getoption("--browser")
+    if isinstance(browser_title, list):
+        browser_title = browser_title[0]
     headless_mode = not request.config.getoption("--headed")
 
     with sync_playwright() as sync_p:
-        browser = getattr(sync_p, browser_name).launch(headless=headless_mode)
+        browser = getattr(sync_p, browser_title).launch(headless=headless_mode)
         ctx = browser.new_context()
         page = ctx.new_page()
-        yield page
+        yield page, browser
         ctx.close()
         browser.close()
+
+@pytest.fixture(scope="function")
+def browser_page(browser_and_page_tuple):
+    browser_page, _ = browser_and_page_tuple
+    return browser_page
 
 """
 Session fixture to retrieve basic url. Used to construct either base url or more complex page routes, for example:
@@ -74,3 +83,21 @@ def make_screenshot_after_test(request, browser_page):
         name=f"test_{request.node.name}",
         attachment_type=allure.attachment_type.PNG
     )
+
+"""
+Fixture to get and write environment information for Allure Environment section
+"""
+@pytest.fixture(autouse=True)
+def add_allure_env(browser_and_page_tuple, browser_name, pytestconfig):
+    page, browser = browser_and_page_tuple
+    os_name = platform.system()
+    os_release = platform.release()
+    os_ver = platform.version()
+    res_dir = pytestconfig.getoption("--alluredir")
+    os.makedirs(res_dir, exist_ok=True)
+    env = os.path.join(res_dir, "environment.properties")
+    with open(env, "w") as env_file:
+        env_file.write(f"Browser={browser_name}\n")
+        env_file.write(f"Browser.Version={browser.version}\n")
+        env_file.write(f"OS={os_name} {os_release} {os_ver}\n")
+        env_file.write(f"Python={sys.version}")
